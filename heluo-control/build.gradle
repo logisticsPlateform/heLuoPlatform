@@ -1,0 +1,13 @@
+apply plugin: 'war'
+bootRun {
+	main = 'com.nyh.app.provider.HeLuoServiceApplication'
+}
+dependencies {
+    compile project(":heluo-core")
+    //spring boot
+    compile "org.springframework.boot:spring-boot-starter:$springBootVersion"
+    
+    compile "org.springframework.boot:spring-boot-starter-aop:$springBootVersion"
+    //compile "org.springframework.boot:spring-boot-configuration-processor:$springBootVersion"
+    //testCompile "org.springframework.boot:spring-boot-starter-test:$springBootVersion"
+}

@@ -1,0 +1,38 @@
+buildscript {
+    repositories {
+	    mavenLocal()
+	    mavenCentral()
+	}
+    ext {
+        springBootVersion = '2.0.2.RELEASE'
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'maven'
+    apply plugin: 'io.spring.dependency-management'
+    version =  '0.0.1'
+    group = 'my.heluo.service'
+
+    jar {
+        enabled = false
+    }
+    repositories {
+	    mavenLocal()
+	    mavenCentral()
+	}
+
+    artifacts {
+        archives jar
+    }
+    
+
+}
+
+description = '河洛'
