@@ -2,6 +2,7 @@ package com.nyh.app.core.service.userInfo.impl;
 
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -47,7 +48,8 @@ public class UserInfoServiceImpl implements UserInfoService {
 	@Override
 	public Map<String, Object> insert() {
 		Map<String, Object> map = new HashMap<String, Object>();
-		map.put("aaa", "bbbb");
+		List<UserInfo> findAll = mapper.findAll();
+		map.put("users", findAll);
 		return map;
 	}
 	
